@@ -2,7 +2,7 @@ import hashlib as hashy
 import random
 
 # (L, N) = (3072, 256)
-# Mixed Key of Parameters: (H, output), (L, key_length), (N, modulus_length), (block_time, seconds), (block_size, megabytes)
+# Mixed Key of Parameters: (L, key_length), (N, modulus_length)
 
 #q is a N-bit prime
 #p is a L-bit prime such that p - 1 = kq
@@ -13,7 +13,8 @@ def str_to_hash(_str):
     return H_m
 
 #seed_phrase is a 16 word digest
-#invoke to generate the keys of a wallet
+#Invoke to generate the public and private keys (x, y) in a cryptosystem
+#with parameters (p, q, g)
 def generate_keys(p, q, g, seed_phrase):
     H_m = str_to_hash(seed_phrase)
 
